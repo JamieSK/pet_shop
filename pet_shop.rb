@@ -1,3 +1,13 @@
+class Error < RuntimeError
+end
+
+class PetNotFound < Error
+end
+
+class NotEnoughMoney < Error
+end
+
+
 def pet_shop_name(pet_shop)
   pet_shop[:name]
 end
@@ -73,14 +83,4 @@ def sell_pet_to_customer!(pet_shop, pet, customer)
   add_pet_to_customer!(customer, pet)
 
   increase_pets_sold!(pet_shop, 1)
-end
-
-
-class Error < RuntimeError
-end
-
-class PetNotFound < Error
-end
-
-class NotEnoughMoney < Error
 end
