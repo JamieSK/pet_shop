@@ -7,7 +7,6 @@ end
 class NotEnoughMoney < Error
 end
 
-
 def pet_shop_name(pet_shop)
   pet_shop[:name]
 end
@@ -33,22 +32,22 @@ def stock_count(pet_shop)
 end
 
 def pets_by_breed(pet_shop, breed)
-  pet_shop[:pets].each_with_object(pets = []) { |pet|
+  pet_shop[:pets].each_with_object(pets = []) do |pet|
     pets << pet if pet[:breed] == breed
-  }
+  end
 end
 
 def find_pet_by_name(pet_shop, name)
-  pet_shop[:pets].each { |pet|
+  pet_shop[:pets].each do |pet|
     return pet if pet[:name] == name
-  }
+  end
   nil
 end
 
 def remove_pet_by_name!(pet_shop, name)
-  pet_shop[:pets].reject! { |pet|
+  pet_shop[:pets].reject! do |pet|
     pet[:name] == name
-  }
+  end
 end
 
 def add_pet_to_stock!(pet_shop, new_pet)
