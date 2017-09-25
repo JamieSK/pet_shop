@@ -42,7 +42,7 @@ def find_pet_by_name(pet_shop, name)
   pet_shop[:pets].each { |pet|
     return pet if pet[:name] == name
   }
-  return nil
+  nil
 end
 
 def remove_pet_by_name!(pet_shop, name)
